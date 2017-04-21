@@ -1,4 +1,4 @@
-Configuration Net462
+Configuration DotNet462
 {            
     Import-DscResource -ModuleName PSDesiredStateConfiguration
     Node localhost
