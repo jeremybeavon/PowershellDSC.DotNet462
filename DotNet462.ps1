@@ -1,3 +1,5 @@
+# Taken from: http://code.commongroove.com/2016/08/09/powershell-dsc-script-resource-dot-net-4-6-2/
+
 Configuration DotNet462
 {            
     Import-DscResource -ModuleName PSDesiredStateConfiguration
