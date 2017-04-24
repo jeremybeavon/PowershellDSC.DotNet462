@@ -25,7 +25,7 @@ Configuration DotNet462
                 Where { $_.Version -match '4.6.01590' -and $_.PSChildName -eq 'Full' }
                 If ($dotNetFull -eq $null) { $false } Else { $true }
             }
-            SetScript ={
+            SetScript = {
                 $proc = Start-Process -FilePath "C:\WindowsAzure\NDP462-KB3151800-x86-x64-AllOS-ENU.exe" -ArgumentList "/quiet /norestart /log C:\WindowsAzure\NDP462-KB3151800-x86-x64-AllOS-ENU_install.log" -PassThru -Wait
                 Switch($proc.ExitCode)
                 {
@@ -53,10 +53,6 @@ Configuration DotNet462
             }
             GetScript = {@{Result = "InstallDotNet462"}}
             DependsOn = "[Script]DownloadDotNet462"
-        }
-        LocalConfigurationManager
-        {
-            RebootNodeIfNeeded = $true
         }
     }
 }
